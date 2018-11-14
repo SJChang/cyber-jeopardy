@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cyber Jeopardy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container" align="center">
+        <h1>Cyber Jeopardy</h1>      
+        <p>Learn with Fun</p>
+      </div>
+  </div>
+<div class="container">
+  <h2>somethin start</h2>
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+          Collapsible Group Item #1
+        </a>
+      </div>
+      <div id="collapseOne" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+         <tr>
+      <td id="question">what is DOS2222222?
+      <br>
+      <br>
+    <input id="checkbox1" type="radio" name="answer" value="10"/>
+      <label for="checkbox1">A</label>
+      <br>
+      <input id="checkbox2" type="radio" name="answer" value="20"/>
+      <label for="checkbox2">B</label>
+        <br>
+      <input id="checkbox3" type="radio" name="answer" value="30"/>
+      <label for="checkbox3">C</label>
+        <br>
+      <input id="checkbox4" type="radio" name="answer" value="40"/>
+      <label for="checkbox4">D</label>
+        <br>
+      <button type="button" onclick="btnClick()">submit</button>
+  <script>
+    function btnClick() {
+          var score=0;
+      if(window.location.hash){
+        score=window.location.hash.replace("#","");
+      }
+      var objs=document.querySelectorAll("[name='answer']");
+      for(var i=0;i<objs.length;i++){
+        if(objs[i].checked==true){
+          score=score*1+objs[i].value*1;
+        }
+      }
+      alert('Congradulations! You get '+score+' points');
+          window.location.href="index.html#"+(score);
+      }
+</script>
+
+
+
+<canvas id='canvas' width='200' height='200'></canvas>
+<script>
+  window.onload = function(){
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  var width = canvas.width;
+  var height = canvas.height;
+  var lineargradient = ctx.createLinearGradient(0, 0, width/2, 0);
+  
+  lineargradient.addColorStop(0, 'yellow');
+  lineargradient.addColorStop(1, 'red');
+  ctx.lineWidth=10;
+  ctx.strokeStyle=lineargradient;
+  
+  ctx.textAlign="center"; 
+  ctx.textBaseline="middle"; 
+  // ctx.lineCap="round";
+   
+  var currentSec =30;
+  var currentTime = currentSec; 
+  var rangle = 360/currentTime;
+  var count = 0;
+  
+  function startTime() {
+    ctx.clearRect(0,0,width,height);    
+    currentSec--;
+    count++;
+    time = setTimeout(startTime,1000); 
+    
+    drawText();  
+    drawCircle();
+    
+    if( count == currentTime ) {
+      clearTimeout(time) 
+    } 
+  }; 
+  
+  function drawCircle() {
+    ctx.beginPath();
+    ctx.arc(width/2,height/2,40,1.5*Math.PI,1.5*Math.PI-(rangle*count/180*Math.PI),false);  
+    ctx.stroke();
+  }
+ 
+  function drawText() {
+    ctx.font="12px Microsoft JhengHei";
+    ctx.fillText( "CountDown 30 seconds", width/2,height/9);
+    ctx.font="20px Microsoft JhengHei";
+    ctx.fillText(currentSec, width/2,height/2);
+  }
+  
+  startTime(); 
+ 
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+    
+      </td>
+    </tr>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+        Collapsible Group Item #2
+      </a>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+         <tr>
+      <td id="question">what is DOS2222222?
+      <br>
+      <br>
+    <input id="checkbox1" type="radio" name="answer" value="10"/>
+      <label for="checkbox1">A</label>
+      <br>
+      <input id="checkbox2" type="radio" name="answer" value="20"/>
+      <label for="checkbox2">B</label>
+        <br>
+      <input id="checkbox3" type="radio" name="answer" value="30"/>
+      <label for="checkbox3">C</label>
+        <br>
+      <input id="checkbox4" type="radio" name="answer" value="40"/>
+      <label for="checkbox4">D</label>
+        <br>
+      <button type="button" onclick="btnClick()">submit</button>
+    
+      </td>
+    </tr>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+          Collapsible Group Item #3
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <tr>
+      <td id="question">what is DOS2222222?
+      <br>
+      <br>
+    <input id="checkbox1" type="radio" name="answer" value="10"/>
+      <label for="checkbox1">A</label>
+      <br>
+      <input id="checkbox2" type="radio" name="answer" value="20"/>
+      <label for="checkbox2">B</label>
+        <br>
+      <input id="checkbox3" type="radio" name="answer" value="30"/>
+      <label for="checkbox3">C</label>
+        <br>
+      <input id="checkbox4" type="radio" name="answer" value="40"/>
+      <label for="checkbox4">D</label>
+        <br>
+      <button type="button" onclick="btnClick()">submit</button>
+    
+      </td>
+    </tr>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    score:<span id="score"></span>
+  </div>
+</div>
+<script type="text/javascript">
+  var scoreF=function(){
+    var score=0;
+    if(window.location.hash){
+      score=window.location.hash.replace("#","");
+    }
+    document.getElementById("score").innerHTML=score;
+
+    var objs=document.querySelectorAll("a[data-href]");
+    for(var i=0;i<objs.length;i++){
+      objs[i].setAttribute("href",objs[i].getAttribute("data-href")+"#"+score)
+    }
+  };
+  setInterval(scoreF,100);
+  scoreF();
+  var objs=document.querySelectorAll("a[href]");
+  for(var i=0;i<objs.length;i++){
+    objs[i].setAttribute("data-href",objs[i].getAttribute("href"));
+  }
+</script>
+</body>
+</html>
