@@ -57,6 +57,7 @@
       }
       alert('Congradulations! You get '+score+' points');
           window.location.href="index.html#"+(score);
+          $(".collapse:visible").hide().parent().next().find(".collapse").show();
       }
 </script>
 
@@ -207,10 +208,10 @@
     }
     document.getElementById("score").innerHTML=score;
 
-    var objs=document.querySelectorAll("a[data-href]");
-    for(var i=0;i<objs.length;i++){
-      objs[i].setAttribute("href",objs[i].getAttribute("data-href")+"#"+score)
-    }
+    // var objs=document.querySelectorAll("a[data-href]");
+    // for(var i=0;i<objs.length;i++){
+    //   objs[i].setAttribute("href",objs[i].getAttribute("data-href")+"#"+score)
+    // }
   };
   setInterval(scoreF,100);
   scoreF();
@@ -218,6 +219,10 @@
   for(var i=0;i<objs.length;i++){
     objs[i].setAttribute("data-href",objs[i].getAttribute("href"));
   }
+  $("[data-toggle]").on("click",function(){
+  	$(".collapse").hide();
+  	$($(this).attr("href")).show();
+  })
 </script>
 </body>
 </html>
