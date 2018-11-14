@@ -15,7 +15,7 @@
         <p>Learn with Fun</p>
       </div>
   </div>
-<div class="container">
+<div class="container" align="center">
   <h2>somethin start</h2>
   <div id="accordion">
     <div class="card">
@@ -97,6 +97,7 @@
     
     if( count == currentTime ) {
       clearTimeout(time) 
+      endTest();
     } 
   }; 
   
@@ -115,6 +116,13 @@
   
   startTime(); 
  
+ function endTest(){
+  document.getElementById('checkbox1').disabled = true;
+  document.getElementById('checkbox2').disabled = true;
+  document.getElementById('checkbox3').disabled = true;
+  document.getElementById('checkbox4').disabled = true;
+  alert("test ended")
+ }
 }
 </script>
 
